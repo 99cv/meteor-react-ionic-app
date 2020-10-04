@@ -7,6 +7,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import { Hello } from './Hello';
 import { Info } from './Info';
 import SideMenu from './SideMenu';
+import SideNotif from './SideNotif';
 
 import '@ionic/core/css/core.css';
 import '@ionic/core/css/ionic.bundle.css';
@@ -24,10 +25,11 @@ return (
           <IonPage id="main">
             <Switch>
               <Route path="/home" component={Hello} exact={true} />
-        <Route exact path="/" render={() => <Redirect to="/home" />} />
-        <Route path="/new" component={Info} />
+              <Route exact path="/" render={() => <Redirect to="/home" />} />
+              <Route path="/new" component={Info} />
             </Switch>
           </IonPage>
+          <SideNotif></SideNotif>
         </IonSplitPane>
       </IonApp>
     </div>

@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { IonMenu, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonMenuToggle, IonIcon, IonLabel, IonItem } from "@ionic/react";
- import { RouteComponentProps, withRouter } from 'react-router';
+import { RouteComponentProps, withRouter } from 'react-router';
 //import { RouteComponentProps, withRouter } from '@ionic/react-router';
 
 const pages = [
@@ -9,12 +9,12 @@ const pages = [
     { title: 'New', path: '/new', icon: 'information' }
 ];
 
-const SideMenu = ({ history }) => {
+const SideNotif = ({ history }) => {
     const [activePage, setActivePage] = useState(pages[0].title);
 
     const renderMenuItems = () => {
         return pages.map((page) => (
-            <IonMenuToggle key={page.title} auto-hide="false">
+            <IonMenuToggle key={page.title} auto-hide="false" menu="notif">
                 <IonItem button
                     color={page.title === activePage ? 'primary' : ''}
                     onClick={() => navigateToPage(page)}>
@@ -33,11 +33,11 @@ const SideMenu = ({ history }) => {
     }
 
     return (
-        <IonMenu contentId="main" menuId="menu">
+        <IonMenu side="end" contentId="main" menuId="notif">
             <IonHeader>
                 <IonToolbar>
                     <IonTitle>
-                        Menu
+                        Notifications
                     </IonTitle>
                 </IonToolbar>
             </IonHeader>
@@ -51,5 +51,5 @@ const SideMenu = ({ history }) => {
 }
 
 export default withRouter(
-    SideMenu
+    SideNotif
 );

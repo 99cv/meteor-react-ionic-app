@@ -11,13 +11,20 @@ export const Hello = (props) => {
 
         <IonToolbar>
           <IonButtons slot="start">
-            <IonMenuToggle>
+            <IonMenuToggle menu="menu">
               <IonButton>
                 <IonIcon slot="icon-only" icon={menu}></IonIcon>
               </IonButton>
             </IonMenuToggle>
           </IonButtons>
           <IonTitle>Ionic Blank</IonTitle>
+          <IonButtons slot="end">
+            <IonMenuToggle menu="notif">
+              <IonButton>
+                <IonIcon slot="icon-only" icon={menu}></IonIcon>
+              </IonButton>
+            </IonMenuToggle>
+          </IonButtons>
         </IonToolbar>
 
       </IonHeader>
